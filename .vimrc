@@ -1,40 +1,35 @@
 " 
 " Grantus vimrc 2013
 "
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 "
-" Let Vundle manage Vundle
+" Vundle Start
 "
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/vundle'
+
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'chriskempson/base16-vim'
+Plugin 'Rip-Rip/clang_complete'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 "
-" My bundles
+" Vundle End
 "
-Bundle 'derekwyatt/vim-scala'
-Bundle 'derekwyatt/vim-sbt'
-Bundle 'bling/vim-airline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'gre/play2vim'
-Bundle 'kchmck/vim-coffee-script'
 
 "
 " My settings
 "
-filetype plugin indent on
-
 set cc=80
 syntax enable
-set background=dark
-colorscheme solarized
 set mouse=a
-set guifont=Menlo:h12
 set nu
 
 " Tabstops are 4 spaces
@@ -46,17 +41,15 @@ set autoindent
 set hls
 set incsearch
 
+set showmatch           " show matching bracket (briefly jump)
+set matchtime=2         " reduces matching paren blink time from the 5[00]ms def
+set showmode            " show mode in status bar (insert/replace/...)
+
 " set visual bell -- i hate that damned beeping
 set vb
 
 " Allow backspacing over indent, eol, and the start of an insert
 set backspace=2
-
-" Set up the gui cursor to look nice
-set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
-
-" set the gui options the way I like
-set guioptions=acg
 
 " Open NerdTree with Control N
 map <C-n> :NERDTreeToggle<CR>
@@ -67,8 +60,23 @@ nnoremap <F3> :set hlsearch!<CR>
 " Reindent entire file
 map <F7> mzgg=G`z<CR>
 
-" Use OSX tabs rather than vim ones
-set guioptions+=e
+" Gooey Settings :)
+if has('gui_running')
+    set guifont=Andale_Mono:h12
+    set guioptions-=T               " remove the toolbar
+    set guioptions=acg
+    set guioptions+=e
+    set lines=40                    " 40 lines of text instead of 24,
+    set background=dark
+    colorscheme base16-eighties
+endif
+
+" Astyle on Save
+:autocmd BufWritePost *.c execute '!astyle' shellescape(expand('%'), 1)
+:autocmd BufWritePost *.h execute '!astyle' shellescape(expand('%'), 1)
+:autocmd BufWritePost *.cpp execute '!astyle' shellescape(expand('%'), 1)
+:autocmd BufWritePost *.hpp execute '!astyle' shellescape(expand('%'), 1)
+
 
 " Fix airline not loading in non-split windows
 set laststatus=2
@@ -143,16 +151,15 @@ if !empty(&viminfo)
   set viminfo^=!
 endif
 
-" Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux'
-  set t_Co=16
-endif
-
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
-
 inoremap <C-U> <C-G>u<C-U>
 
-" vim:set ft=vim et sw=2:
+" Disable the arrow keys to learn the hard way
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+"
+" Clang settings
+"
+let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib/'
