@@ -33,9 +33,9 @@ set mouse=a
 set nu
 
 " Tabstops are 4 spaces
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 set hls
@@ -60,15 +60,19 @@ nnoremap <F3> :set hlsearch!<CR>
 " Reindent entire file
 map <F7> mzgg=G`z<CR>
 
+" CLI settings
+set background=dark
+colorscheme base16-default
+
 " Gooey Settings :)
 if has('gui_running')
-    set guifont=Andale_Mono:h12
+    set guifont=Source\ Code\ Pro\ 12
     set guioptions-=T               " remove the toolbar
     set guioptions=acg
     set guioptions+=e
     set lines=40                    " 40 lines of text instead of 24,
     set background=dark
-    colorscheme base16-eighties
+    colorscheme base16-default
 endif
 
 " Astyle on Save
@@ -86,10 +90,10 @@ let mapleader = ","
 map <leader>r :NERDTreeFind<cr>
 
 if has('autocmd')
-  filetype plugin indent on
+    filetype plugin indent on
 endif
 if has('syntax') && !exists('g:syntax_on')
-  syntax enable
+    syntax enable
 endif
 
 " Sensible Vim vimrc e
@@ -108,7 +112,7 @@ set ttimeoutlen=50
 set incsearch
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+    nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
 set ruler
@@ -116,39 +120,39 @@ set showcmd
 set wildmenu
 
 if !&scrolloff
-  set scrolloff=1
+    set scrolloff=1
 endif
 if !&sidescrolloff
-  set sidescrolloff=5
+    set sidescrolloff=5
 endif
 set display+=lastline
 
 if &encoding ==# 'latin1' && has('gui_running')
-  set encoding=utf-8
+    set encoding=utf-8
 endif
 
 if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
-    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
-  endif
+    set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+    if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+        let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+    endif
 endif
 
 if &shell =~# 'fish$'
-  set shell=/bin/zsh
+    set shell=/bin/zsh
 endif
 
 set autoread
 set fileformats+=mac
 
 if &history < 1000
-  set history=1000
+    set history=1000
 endif
 if &tabpagemax < 50
-  set tabpagemax=50
+    set tabpagemax=50
 endif
 if !empty(&viminfo)
-  set viminfo^=!
+    set viminfo^=!
 endif
 
 inoremap <C-U> <C-G>u<C-U>
