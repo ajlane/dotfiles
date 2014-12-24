@@ -56,7 +56,7 @@ noremap <right> <nop>
 let g:airline#extensions#tabline#enabled = 1
 
 " Set nice font for GVim
-set guifont=Consolas:h10
+set guifont=Source\ Code\ Pro:h10
 
 " Syntax Highlighting
 syntax on
