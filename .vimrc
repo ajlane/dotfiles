@@ -1,169 +1,147 @@
-" 
-" Grantus vimrc 2013
-"
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 "
-" Vundle Start
+" Vundle plugin management
 "
+
+" Set runtime path
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/vundle'
 
-Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Git goodness
+Plugin 'tpope/vim-fugitive'
+
+" Glorious colorschemes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'endel/vim-github-colorscheme'
+" NERDTree
 Plugin 'scrooloose/nerdtree'
-Plugin 'chriskempson/base16-vim'
-Plugin 'Rip-Rip/clang_complete'
 
+" Super easy commenting, toggle comments etc
+Plugin 'scrooloose/nerdcommenter'
+
+" Autoclose (, " etc
+Plugin 'Townk/vim-autoclose'
+
+" Handle surrounds
+Plugin 'tpope/vim-surround'
+
+" Ariline
+Plugin 'bling/vim-airline'
+
+" All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 
 "
-" Vundle End
+" My custom vim settings 
 "
 
+" Disable beeping
+set noeb vb t_vb=
+set t_vb=
+
 "
-" My settings
+" In normal mode, unmap arrow keys
 "
-set cc=80
-syntax enable
-set mouse=a
-set nu
+noremap <left> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <right> <nop>
 
-" Tabstops are 4 spaces
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set autoindent
-set hls
-set incsearch
+" Airline shows tabs when you have only 1 buffer open
+let g:airline#extensions#tabline#enabled = 1
 
-set showmatch           " show matching bracket (briefly jump)
-set matchtime=2         " reduces matching paren blink time from the 5[00]ms def
-set showmode            " show mode in status bar (insert/replace/...)
+" Set nice font for GVim
+set guifont=Consolas:h10
 
-" set visual bell -- i hate that damned beeping
-set vb
-
-" Allow backspacing over indent, eol, and the start of an insert
-set backspace=2
-
-" Open NerdTree with Control N
-map <C-n> :NERDTreeToggle<CR>
-
-" Map <F3> to clear last search
-nnoremap <F3> :set hlsearch!<CR>
-
-" Reindent entire file
-map <F7> mzgg=G`z<CR>
-
-" CLI settings
+" Syntax Highlighting
+syntax on
 set background=dark
-colorscheme base16-default
+colors solarized
 
-" Gooey Settings :)
-if has('gui_running')
-    set guifont=Source\ Code\ Pro\ 12
-    set guioptions-=T               " remove the toolbar
-    set guioptions=acg
-    set guioptions+=e
-    set lines=40                    " 40 lines of text instead of 24,
-    set background=dark
-    colorscheme base16-default
-endif
+" Remap <leader>
+let mapleader=","
 
-" Astyle on Save
-:autocmd BufWritePost *.c execute '!astyle' shellescape(expand('%'), 1)
-:autocmd BufWritePost *.h execute '!astyle' shellescape(expand('%'), 1)
-:autocmd BufWritePost *.cpp execute '!astyle' shellescape(expand('%'), 1)
-:autocmd BufWritePost *.hpp execute '!astyle' shellescape(expand('%'), 1)
+" Yank(copy) to system clipboard
+noremap <leader>y "+y<CR>
+noremap <leader>p "+p
 
+" Indentation based on file-type
+filetype plugin indent on
 
-" Fix airline not loading in non-split windows
-set laststatus=2
-
-" Open NerdTree in current buffer's PWD
-let mapleader = ","
-map <leader>r :NERDTreeFind<cr>
-
-if has('autocmd')
-    filetype plugin indent on
-endif
-if has('syntax') && !exists('g:syntax_on')
-    syntax enable
-endif
-
-" Sensible Vim vimrc e
-set autoindent
-set backspace=indent,eol,start
-set complete-=i
-set showmatch
-set smarttab
-
-set nrformats-=octal
-set shiftround
-
-set ttimeout
-set ttimeoutlen=50
-
-set incsearch
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-    nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-endif
-
-set ruler
-set showcmd
+" Shows autocomplete menus on commands
 set wildmenu
 
-if !&scrolloff
-    set scrolloff=1
-endif
-if !&sidescrolloff
-    set sidescrolloff=5
-endif
-set display+=lastline
+" Bubbling (bracket matching)
+nmap <C-up> [e
+nmap <C-down> ]e
+vmap <C-up> [egv
+vmap <C-down> ]egv
 
-if &encoding ==# 'latin1' && has('gui_running')
-    set encoding=utf-8
-endif
+" Indentation settings
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set expandtab
+set textwidth=79
+set colorcolumn=79
+set wrap
+set cindent
+set cinoptions=h1,l1,g1,t0,i2,+2,(0,w1,W2
 
-if &listchars ==# 'eol:$'
-    set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-    if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
-        let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
-    endif
-endif
+" Make backspace work like it should
+set backspace=indent,eol,start
 
-if &shell =~# 'fish$'
-    set shell=/bin/zsh
-endif
+" Highlight current line
+set cursorline
 
-set autoread
-set fileformats+=mac
+" Show line numbers
+set nu
 
-if &history < 1000
-    set history=1000
-endif
-if &tabpagemax < 50
-    set tabpagemax=50
-endif
-if !empty(&viminfo)
-    set viminfo^=!
-endif
+" Highlight search results
+set hlsearch
 
-inoremap <C-U> <C-G>u<C-U>
+" Incremental search
+set incsearch
 
-" Disable the arrow keys to learn the hard way
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
+" Turn off search highlight using <leader><space>
+nnoremap <leader><space> :nohlsearch<CR>
 
-"
-" Clang settings
-"
-let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib/'
+" Show matching brackets
+set showmatch   
+
+" Remove gui menubar
+set guioptions-=m
+
+" Remove gui toolbar
+set guioptions-=T
+
+" Remove gui right scroll bar
+set guioptions-=r
+
+" Remove gui left scroll bar
+set guioptions-=L
+
+" If no files are specified open NerdTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Open NerdTree
+map <C-n> :NERDTreeToggle<CR>
+
+" If there are no file left open, and NerdTree is the last window, Exit Vim
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Cycle through buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+" F2 saves
+nmap <F2> :w<CR>
+
+" F7 autoformats
+map <F7> mzgg=G`z<CR>
