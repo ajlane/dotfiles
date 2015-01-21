@@ -1,4 +1,5 @@
 set nocompatible
+
 filetype off
 
 "
@@ -18,6 +19,8 @@ Plugin 'tpope/vim-fugitive'
 " Glorious colorschemes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'endel/vim-github-colorscheme'
+Plugin 'flazz/vim-colorschemes'
+
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
@@ -70,8 +73,7 @@ set guifont=Source\ Code\ Pro:h11
 " Syntax Highlighting
 syntax on
 set background=dark
-colors solarized
-let g:solarized_italic=0
+colorscheme Tomorrow-Night-Eighties
 
 " Remap <leader>
 let mapleader=","
