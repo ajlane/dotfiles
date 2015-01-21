@@ -33,6 +33,15 @@ Plugin 'tpope/vim-surround'
 " Ariline
 Plugin 'bling/vim-airline'
 
+" Vim Autoformat with Astyle
+Plugin 'Chiel92/vim-autoformat'
+
+" Ctrl-P
+Plugin 'kien/ctrlp.vim'
+
+" Highlight trailing space
+Plugin 'ntpeters/vim-better-whitespace'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -56,12 +65,13 @@ noremap <right> <nop>
 let g:airline#extensions#tabline#enabled = 1
 
 " Set nice font for GVim
-set guifont=Source\ Code\ Pro:h10
+set guifont=Source\ Code\ Pro:h11
 
 " Syntax Highlighting
 syntax on
 set background=dark
 colors solarized
+let g:solarized_italic=0
 
 " Remap <leader>
 let mapleader=","
@@ -83,9 +93,9 @@ vmap <C-up> [egv
 vmap <C-down> ]egv
 
 " Indentation settings
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 set expandtab
 set textwidth=79
 set colorcolumn=79
@@ -127,21 +137,27 @@ set guioptions-=r
 set guioptions-=L
 
 " If no files are specified open NerdTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Open NerdTree
 map <C-n> :NERDTreeToggle<CR>
-
-" If there are no file left open, and NerdTree is the last window, Exit Vim
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Cycle through buffers
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
 " F2 saves
-nmap <F2> :w<CR>
+nmap <F2> :w<CR><CR>
+" F1 saves too because I always mash it when I go to hit <F2>
+nmap <F1> :w<CR><CR>
 
 " F7 autoformats
-map <F7> mzgg=G`z<CR>
+"map <F7> mzgg=G`z<CR>
+let g:formatprg_c = "astyle"
+let g:formatprg_args_c = "--style=java --indent=spaces=4 --attach-classes --attach-namespaces --attach-extern-c --indent-classes --indent-modifiers --indent-cases --indent-namespaces --indent-labels --indent-preproc-block --indent-preproc-cond --indent-preproc-define --unpad-paren --pad-oper --pad-header --align-pointer=type --align-reference=type --break-closing-brackets --break-elseifs --add-brackets --convert-tabs --max-code-length=79 --mode=c"
+noremap <F7> :Autoformat<CR><CR>
+
+" Control-P
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'

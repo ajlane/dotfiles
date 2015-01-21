@@ -1,4 +1,5 @@
 Dotfiles
 ========
 
-My vimrc, and other "dot files"
+* My vimrc, and other "dot files"
+
