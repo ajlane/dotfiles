@@ -68,7 +68,7 @@ noremap <right> <nop>
 let g:airline#extensions#tabline#enabled = 1
 
 " Set nice font for GVim
-set guifont=Source\ Code\ Pro:h11
+set guifont=Source\ Code\ Pro:h10
 
 " Syntax Highlighting
 syntax on
@@ -150,9 +150,9 @@ nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
 " F2 saves
-nmap <F2> :w<CR><CR>
+nmap <F2> :w<CR>
 " F1 saves too because I always mash it when I go to hit <F2>
-nmap <F1> :w<CR><CR>
+nmap <F1> :w<CR>
 
 " F7 autoformats
 "map <F7> mzgg=G`z<CR>
