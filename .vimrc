@@ -41,6 +41,8 @@ Plugin 'Chiel92/vim-autoformat'
 
 " Ctrl-P
 Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+
 
 " Highlight trailing space
 Plugin 'ntpeters/vim-better-whitespace'
@@ -95,9 +97,9 @@ vmap <C-up> [egv
 vmap <C-down> ]egv
 
 " Indentation settings
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 set expandtab
 set textwidth=79
 set colorcolumn=79
@@ -157,9 +159,15 @@ nmap <F1> :w<CR>
 " F7 autoformats
 "map <F7> mzgg=G`z<CR>
 let g:formatprg_c = "astyle"
-let g:formatprg_args_c = "--style=java --indent=spaces=4 --attach-classes --attach-namespaces --attach-extern-c --indent-classes --indent-modifiers --indent-cases --indent-namespaces --indent-labels --indent-preproc-block --indent-preproc-cond --indent-preproc-define --unpad-paren --pad-oper --pad-header --align-pointer=type --align-reference=type --break-closing-brackets --break-elseifs --add-brackets --convert-tabs --max-code-length=79 --mode=c"
-noremap <F7> :Autoformat<CR><CR>
+let g:formatprg_args_c = "--style=java --indent=spaces=2 --attach-classes --attach-namespaces --attach-extern-c --indent-classes --indent-modifiers --indent-cases --indent-namespaces --indent-labels --indent-preproc-block --indent-preproc-cond --indent-preproc-define --unpad-paren --pad-oper --pad-header --align-pointer=type --align-reference=type --break-closing-brackets --break-elseifs --add-brackets --convert-tabs --max-code-length=79 --mode=c"
+let g:formatprg_cpp = "astyle"
+let g:formatprg_args_cpp = "--style=java --indent=spaces=2 --attach-classes --attach-namespaces --attach-extern-c --indent-classes --indent-modifiers --indent-cases --indent-namespaces --indent-labels --indent-preproc-block --indent-preproc-cond --indent-preproc-define --unpad-paren --pad-oper --pad-header --align-pointer=type --align-reference=type --break-closing-brackets --break-elseifs --add-brackets --convert-tabs --max-code-length=79"
+
+noremap <F7> :Autoformat<CR>
+
 
 " Control-P
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <leader>t :Tagbar<CR>
