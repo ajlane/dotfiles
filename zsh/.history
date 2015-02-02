@@ -1,0 +1,765 @@
+ls -la
+gvim .zshrc
+cp ~/Downloads/dotfiles-master/.dir_colors .
+gvim zsh/zsh-aliases
+ls -la
+cd Code
+cd grave
+ls -la
+cd build
+make -h
+make -j
+cd Code
+cd vagrant-r6
+vagrant up
+cd Code
+cd archive
+cd r6-6.6.1-example-app
+cd components
+cd provisioning
+ls -la
+gvim .
+cd ..
+cd r6-developer-example
+gvim .
+cd Code
+cd iinet-r6
+cd iinet-r6-co
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+gvim extract_ssi.sh
+copy extract_test.sh
+copy exteract_ssi.sh extract_test.sh
+cp extract_ssi.sh extract_test.ssh
+gvim extract_test.ssh
+clear
+ssh -L 1521:ssi-osb-orarodimus3:1521 root@infonovadas1.test.iinet.net.au
+cd /etc
+gvim hosts
+cd Code
+cd iinet-r6
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+gvim .
+./extract_test.ssh
+cd target
+cp iinet-r6-config-extraction-tool-0.1-SNAPSHOT-jar-with-dependencies.jar ../
+cd ..
+./extract_test.ssh
+gvim extract_dev.sh
+./extract_test.ssh
+cd Code
+cd iinet-r6
+cd iinet-r6-config
+cd iinet-r6-config-
+cd iinet-r6-config-extraction-tool
+cd output
+ls -la
+clear
+cd retail_offers
+ls -la
+cd 201501231103
+ls -la
+gvim \$129\ Home\ Chat.xml
+ls -la
+ls -h
+ls -htr
+ls -ahtr
+ls -ahr
+ls -lah
+gvim \$129\ Home\ Chat.xml
+ls -la
+cd Code
+cd iinet-r6
+clear
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+cd output
+ls -la
+cd sql
+ls -la
+cd ino_onconfig
+cd 201
+cd 201501231103
+ls -la
+cd ..
+ls -la
+cd ..
+ls -la
+clear
+cd ..
+mv extract_test.ssh extract_test_vso01.ssh
+cp extract_test_vso01.ssh extract_test_vsp.ssh
+gvim extract_test_vsp.ssh
+./extract_test_vsp.ssh
+cd Code
+cd iinet-r6
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+ls -la
+cd ..
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+ls -la
+clear
+cd output
+cd sql
+ls -la
+cd ino_onconfig
+ls -la
+cd 201501231115
+ls -la
+gvim service_locator_params.sql
+mvn clean package
+cd ..
+mvn clean package
+cd iinet-r6-config-
+cd iinet-r6-config-extraction-tool
+mvn clean packge
+gvim .
+mvn clean package
+mvn clean package -X
+cd target
+cd ..
+ls -la
+rm extract_test.ssh
+gvim extract_test_vso01.ssh
+ls -la
+./extract_test_vsp.ssh
+cd Code
+cd iinet-r6
+cd iinet-r6-co
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+./extract_test_vsp.ssh
+clear
+./extract_test_vso01.ssh
+cd Code
+cd iinet-r6
+cd iinet-r6-co
+cd iinet-r6-config
+cd iinet-r6-config-
+cd iinet-r6-config-extraction-tool
+cd output
+ls -la
+clear
+cd services
+cd 2015012311
+cd 201501231144
+ls -la
+cd Code
+cd ..
+cd wholesale_products
+cd 201501231144
+ls -la
+gvim DATA_ADSL_TRANSACT_WS02.json
+ls -lha
+cd ..
+cd retail_offers
+cd 201501231144
+ls -la
+ls -h
+ls -hl
+ls -hlr
+gvim \$149\ Home\ Chat.json
+ls -ltrh
+clear
+cd Code
+cd iinet-r6
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+cd output
+ls -la
+cd ..
+rm -rf output
+ls -la
+./extract_test_vsp.ssh
+clear
+ls -la
+cd output
+ls -la
+cd wholesale_products
+cd 201501231208
+ls -la
+du -h
+ls -ltrh
+gvim BureauActivity.json
+cd ..
+gvim .gitignore
+cd iinet-r6-config/iinet-r6-config-extraction-tool
+mv extract_test_vso01.ssh extract_test_vso01.sh
+mv extract_test_vsp.ssh extract_test_vsp.sh
+rm extract_ssi.sh
+ls -la
+clear
+ls -la
+cd Code
+cd iinet-r6
+cd iinet-r6-config
+cd iinet-r6-config-
+cd iinet-r6-config-extraction-tool
+cd output
+cd services
+cd 201501231208
+ls -la
+less DATA_NBN_FIBRE_ND1.json
+ls -la
+less DATA_ADSL2_SSS_IINET.json
+clear
+cd ..
+cd retail_offers
+cd 201501231208
+cd ..
+cd wholesale_products
+cd 201501231208
+ls -la
+less MOBILE_OPTUS_POSTPAID_WS02.json
+clear
+ls -la
+cd ..
+cd sql
+cd ino_order_mgmt
+ls -la
+cd 201501231208
+less order_
+less order_workflow_map.sql
+gvim order_workflow_map.sql
+ls -la
+cd output
+ls -la
+cd ..
+./extract_test_vso01.sh
+ssh root@192.168.200.101
+ssh root@192.168.200.100
+ssh root@192.168.200.102
+cd Code
+cd iinet-r6
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+cd output
+tree services
+tree sql
+gvim sql/ino_onconfig/201501231208/service_locator_params.sql
+clear
+cd Code
+cd iinet-r6
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+ls -la
+cd output
+tail retail_offers/201501230302/$5 MobileCAP.xml
+tail retail_offers/201501230252
+cd retail_offers
+ls -ltr
+cd 201501230302
+du -h
+ls =ltrh
+ls ltrh
+ls -ltrh
+gvim \$5\ MobileCAP.xml
+clear
+ls -la
+./extract_test_vsp.sh
+clear
+clear
+ssh root@infonovaweb1
+ssh root@192.168.200.101
+ssh root@192.168.200.100
+ssh root@192.168.200.106
+cd Code
+cd grave
+git status
+cd build
+cmake .
+cd ..
+cd deps
+cd sdl
+ls -la
+cd ..
+rm -rf deps
+ls -la
+cd ..
+cd /Library
+cd Frameworks
+clear
+ls -la
+cd Downloads
+cd /Volumes
+cd SDL2
+cp SDL2.framework /Library/Frameworks
+sudo cp -r SDL2.framework /Library/Frameworks
+clear
+cd Co
+cd Code
+cd grave
+l s-la
+ls -la
+cd build
+cmake .
+cd ..
+vim CMakeLists.txt
+cd build
+cmake .
+cd src
+cd gfx
+cd ..
+gvim ~/.zshrc
+prompt
+_prompt
+clear
+ls -la
+cd Code
+ls -la
+gvim .zshrc
+clear
+ls -la
+cd Code
+cd grave
+cd Code
+cd grave
+git status
+cd build
+ls 0kasdf
+cd Code
+ls -la
+cd Code
+cd grave
+cd build
+cd Code
+cd grave
+cd src/gfx
+mv gl_core_3_3.c gl_core_3_3.cpp
+gvim CMakeLists.txt
+brew install lua
+cd Downloads
+unzip glLoadGen_2_0_2.7z
+open glLoadGen_2_0_2.7z
+brew search 7zip
+brew search 7z
+brew install p7zip
+open glLoadGen_2_0_2.7z
+unzip glLoadGen_2_0_2.7z
+7z glLoadGen_2_0_2.7z
+7z --ghelp
+7z --help
+7z e glLoadGen_2_0_2.7z
+ls -la
+clear
+7z -help
+7z --help
+7z x glLoadGen_2_0_2.7z
+cd glLoadGen_2_0_2
+lua LoadGen.lua -style=pointer_cpp -spec=gl -version=3.3 -profile=core core_3_3
+cp gl_core_3_3.* ~/Code/grave/include
+cd Code/grave
+cd include
+mv gl_core_3_3.hpp gfx
+ls -la
+mv gl_core_3_3.cpp ../src/gfx
+cd Code/grave
+cd build
+cmake .
+gvim ../src/gfx/gl_core_3_3.cpp
+cd ..
+cd src
+cd gfx
+gvim gl_core_3_3.cpp
+cd ..
+cd build
+cd Code
+cd grave
+cd src
+mv testing_utils.c testing_utils.cpp
+cd ..
+cd include
+gvim gfx
+cd gfx
+rm gl_core_3_3.h
+cd ..
+cd build
+cd Code
+cd iinet-r6-poc
+cd ..
+cd iinet-r6
+cd iinet-r6-co
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+cd Code
+git clone git@github.com:hpicgs/glbinding.git
+cd glbinding
+clear
+less README.md
+clear
+ls -la
+cd codegeneration
+cd ..
+ls -la
+clear
+cmake
+mkdir build
+cd build
+cmake ..\
+cmake ../
+cmake-gui ../
+cd bui
+cd ..
+rm -rf build
+cd glbinding/build
+cd Code/grave
+git stash
+git lgo
+git log
+clear
+cd build
+brew search glbinding
+brew search gtest
+clear
+ls -la
+cd Code
+mkdir c++-testing
+cd c++-testing
+cp ../grave/CMakeLists.txt .
+mkdir src
+gvim CMakeLists.txt
+mkdir include
+touch include/test.hpp
+touch src/test.cpp
+touch src/CMakeLists.txt
+gvim src/CMakeLists.txt
+cd Code/iinet-r6-poc
+mvn clean
+cd application
+mvn clean
+cd src
+clear
+ls -la
+cd ..
+mkdir build
+cd build
+cmake ..\
+cmake ../
+cd ..
+cd src
+mv test.cpp thing.cpp
+cd ..
+cd include
+mv test.hpp thing.hpp
+cd ..
+gvim src/CMakeLists.txt
+clear
+cd src
+cd ..
+cd include
+cd ..
+cd src
+touch main.cpp
+gvim main.cpp
+mvn clean package
+clear
+cd bui
+cd ..
+cd build
+clear
+cd ..
+cd src
+clear
+touch thing_impl.cpp
+cd ..
+touch include/thing_impl.hpp
+cd src
+gvim CMakeLists.txt
+cd bui
+cd ..
+cd build
+cd bin
+./thing
+cd ..
+bin/thing
+cd ..
+cd build
+bin/thing
+make && bin/thing
+cd ../../grave/.gitignore
+cp ../../grave/.gitignore .
+cd ..
+git rm src/.thing_impl.cpp.swp
+cd src
+cd ..
+cd include
+touch thing_util.hpp
+gvim thing_util.hpp
+cd ..
+cd build
+clear
+cd bin
+cd ..
+cd include
+rm thing_util.hpp
+clear
+touch thing_fwd.hpp
+gvim thing_fwd.hpp
+cd ..
+cd build
+cd ..
+gvim
+cd build
+cmake .
+cd ..
+cd src
+touch user_of_thing.cpp
+cd ..
+cd include
+touch user_of_thing.hpp
+cd ..
+gvim .
+cd Code
+cd grave
+ls -la
+cd ..
+rm -rf grave
+rm -rf grave-xcode
+rm -rf glbinding
+ls -la
+cd textures
+cd ..
+rm -rf textures
+ls -la
+cd RemoteSystemsTempFiles
+cd ..
+rm -rf RemoteSystemsTempFiles
+cd iinet-r6-poc
+gvim .
+rm -rf src
+git status
+git commit -a -m "provisioning: minor updates, created bpmn diagram, fixed compilation"
+git status
+cd application
+mvn clean package
+ls -al
+cd cache
+cd ..
+ls -la
+cd Code
+cd c++-testing
+cd src
+rm thing.cpp
+ls -la
+rm .thing.cpp.swp
+cd ..
+cd include
+cd ..
+cd build
+clear
+cd ..
+cd src
+gvim .
+cd bui
+cd ,,
+cd ..
+cd build
+bin/thing
+cd ..
+cd build
+bin/thing
+build && bin/thing
+make && bin/thing
+cd Code
+cd iinet-r6/iinet-r6-co
+cd iinet-r6/iinet-r6-config
+cd iinet-r6-config-
+cd iinet-r6-config-extraction-tool
+gvim extract_dev.sh
+gvim extract_test_vso01.sh
+mvn clean package
+cd .m2
+gvim settings.xml
+cd Code
+cd iinet-r6
+cd iinet-r6-packaging
+cd ..
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+clear
+./extract_test_vsp.sh
+ls -=la
+ls -la
+cd target
+cd ..
+ssh root@192.168.200.102
+ssh root@
+ssh root@192.168.200.101
+cd Code
+git git@github.com:hpicgs/glbinding.git
+git clone git@github.com:hpicgs/glbinding.git
+clear
+cd gl
+cd glbinding
+cmake
+mkdir build
+cd build
+cmake ..\
+cmake ../
+clear
+make install
+cd ..
+cd Downloads
+rm glLoadGen_2_0_2*
+rm -rf glLoadGen_2_0_2
+unzip gtest-1.7.0.zip
+mv gtest-1.7.0 ~/Downloads
+cd Do
+cd Downloads
+mv gtest-1.7.0 ~/Code
+rm gtest-1.7.0.zip
+cd Code
+cd gtest-1.7.0
+mkdir build
+cd build
+cmake ../
+gvim .zshrc
+cd Code
+gvim .zshrc
+cd Code
+cd gtest-1.7.0/build
+make install
+ls -0al
+ls -la
+cp libgtest* /usr/local/lib
+cd ..
+cd include
+cd ..
+cp -r include /usr/local
+cd /usr/local
+cd include
+ls -al
+cd gtk
+cd gtest
+cd ..
+ls -la
+cd ..
+cd Code
+cd grav
+cd grave
+git status
+clear
+mkdir build
+cd build
+cmake ../
+cd Downloads
+unzip glm-0.9.6.1.zip
+mv glm ~/Code
+cd Code
+cd glm
+mkdir build
+cd build
+cmake ../
+cmake install
+ls -la
+cd glm
+cd ..
+c d..
+cd ..
+cd glm
+cd ..
+cp -rf glm /usr/include
+cp -r glm /usr/include
+cd /usr/include/gssapi
+cd Code/gl
+cd Code/glm
+cp -r glm /usr/local/include
+cd ..
+cd grave
+cd build
+cmake
+cmake .
+cd ..
+gvim .
+cd build
+cmake .
+cd ..
+gvim .
+cd build
+cd ..
+mkdir grave-xcode
+cd grave-xcode
+cd ..
+rm -rf grave-xcode
+mkdir grave-xcode
+cd grave-xcode
+open grave.xcodeproj
+cd .config
+cd Code
+cd grave/build
+gvim .
+cd ..
+cd build
+ls -la
+cd bin
+ls -al
+./grave
+cd ..
+gvim
+gvim src
+cd build
+bin/grave ]
+bin/grave
+cd ..
+gvim
+cd build
+cd ..
+cd build
+bin/grave
+cd Code
+cd grave
+gvim .
+cd build
+bin/grave
+cd build
+make && bin/grave
+clear
+cd grave
+ls -la
+clear
+cd build
+cd ..
+gvim src
+cd build
+bin/grave
+cd Code
+cd iinet-r6/iinet-r6-config/iinet-r6-config-extraction-tool
+./extract_test_vso01.sh
+ssh root@infonovaweb1
+ssh -L 1521:ssi-osb-orarodimus3:1521 root@infonovadas1.test.iinet.net.au
+cd Code
+iinet-r6
+cd iinet-r6-co
+cd iinet-r6-config
+cd iinet-r6-config-extraction-tool
+cd output
+ls -la
+cd retail_offers
+ls -la
+cd 201502021033
+ls -la
+cd ..
+cd 201501230252
+ls -la
+du -h
+less \$129\ Home\ Chat.json
+cd ..
+ls -ltr
+cd 201502021033
+du -h
+ls -la
+gvim \$15\ Access.xml
+cd Code
+cd iinet-r6
+cd ..
+cd grave
+cd build
+cd ..
+cd dotfiles
+git pull
+git log
+cp .zshrc ~/Code/dotfiles
+cp -r zsh ~/Code/dotfiles
