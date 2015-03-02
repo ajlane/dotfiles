@@ -51,7 +51,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 call vundle#end()            " required
 
 "
-" My custom vim settings 
+" My custom vim settings
 "
 
 " Disable beeping
