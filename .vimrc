@@ -36,16 +36,15 @@ Plugin 'tpope/vim-surround'
 " Ariline
 Plugin 'bling/vim-airline'
 
-" Vim Autoformat with Astyle
-Plugin 'Chiel92/vim-autoformat'
-
 " Ctrl-P
 Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-
 
 " Highlight trailing space
 Plugin 'ntpeters/vim-better-whitespace'
+
+" Python yo
+Plugin 'nvie/vim-flake8'
+Plugin 'hynek/vim-python-pep8-indent'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,6 +64,9 @@ noremap <left> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
+
+" Allow mouse interaction
+set mouse=a
 
 " Airline shows tabs when you have only 1 buffer open
 let g:airline#extensions#tabline#enabled = 1
@@ -126,7 +128,7 @@ set incsearch
 nnoremap <leader><space> :nohlsearch<CR>
 
 " Show matching brackets
-set showmatch   
+set showmatch
 
 " Remove gui menubar
 set guioptions-=m
@@ -157,14 +159,7 @@ nmap <F2> :w<CR>
 nmap <F1> :w<CR>
 
 " F7 autoformats
-"map <F7> mzgg=G`z<CR>
-let g:formatprg_c = "astyle"
-let g:formatprg_args_c = "--style=java --indent=spaces=2 --attach-classes --attach-namespaces --attach-extern-c --indent-classes --indent-modifiers --indent-cases --indent-namespaces --indent-labels --indent-preproc-block --indent-preproc-cond --indent-preproc-define --unpad-paren --pad-oper --pad-header --align-pointer=type --align-reference=type --break-closing-brackets --break-elseifs --add-brackets --convert-tabs --max-code-length=79 --mode=c"
-let g:formatprg_cpp = "astyle"
-let g:formatprg_args_cpp = "--style=java --indent=spaces=2 --attach-classes --attach-namespaces --attach-extern-c --indent-classes --indent-modifiers --indent-cases --indent-namespaces --indent-labels --indent-preproc-block --indent-preproc-cond --indent-preproc-define --unpad-paren --pad-oper --pad-header --align-pointer=type --align-reference=type --break-closing-brackets --break-elseifs --add-brackets --convert-tabs --max-code-length=79"
-
-noremap <F7> :Autoformat<CR>
-
+map <F3> mzgg=G`z<CR>
 
 " Control-P
 let g:ctrlp_map = '<c-p>'
