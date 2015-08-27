@@ -46,6 +46,12 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'nvie/vim-flake8'
 Plugin 'hynek/vim-python-pep8-indent'
 
+" Ansible YAML
+Plugin 'chase/vim-ansible-yaml'
+
+" Flake8 Python Shizazz
+Plugin 'nvie/vim-flake8'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -76,8 +82,10 @@ set guifont=Source\ Code\ Pro:h10
 
 " Syntax Highlighting
 syntax on
+set t_Co=16
+let g:solarized_termcolors=16
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme solarized
 
 " Remap <leader>
 let mapleader=","
