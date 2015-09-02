@@ -57,7 +57,6 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'derekwyatt/vim-scala'
 
 " Python yo
-Plugin 'nvie/vim-flake8'
 Plugin 'hynek/vim-python-pep8-indent'
 
 " Ansible YAML
