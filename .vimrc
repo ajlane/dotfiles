@@ -56,6 +56,16 @@ Plugin 'ntpeters/vim-better-whitespace'
 " Vim Scala
 Plugin 'derekwyatt/vim-scala'
 
+" Python yo
+Plugin 'nvie/vim-flake8'
+Plugin 'hynek/vim-python-pep8-indent'
+
+" Ansible YAML
+Plugin 'chase/vim-ansible-yaml'
+
+" Flake8 Python Shizazz
+Plugin 'nvie/vim-flake8'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -75,18 +85,21 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
 
+" Allow mouse interaction
+set mouse=a
+
 " Airline shows tabs when you have only 1 buffer open
 let g:airline#extensions#tabline#enabled = 1
-
-set mouse=a
 
 " Set nice font for GVim
 set guifont=Source\ Code\ Pro:h12
 
 " Syntax Highlighting
 syntax on
-colorscheme tomorrow-night-eighties
+set t_Co=16
+let g:solarized_termcolors=16
 set background=dark
+colorscheme solarized
 
 " Remap <leader>
 let mapleader=","
@@ -112,8 +125,8 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set expandtab
-set textwidth=119
-set colorcolumn=119
+set textwidth=79
+set colorcolumn=79
 set wrap
 set cindent
 set cinoptions=h1,l1,g1,t0,i2,+2,(0,w1,W2
@@ -151,6 +164,10 @@ set guioptions-=r
 " Remove gui left scroll bar
 set guioptions-=L
 
+" If no files are specified open NerdTree
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Open NerdTree
 map <C-n> :NERDTreeToggle<CR>
 
@@ -163,23 +180,10 @@ nmap <F2> :w<CR>
 " F1 saves too because I always mash it when I go to hit <F2>
 nmap <F1> :w<CR>
 
-let g:formatprg_c = "astyle"
-let g:formatprg_args_c = "--style=java --indent=spaces=2 --attach-classes --attach-namespaces --attach-extern-c --indent-classes --indent-modifiers --indent-cases --indent-namespaces --indent-labels --indent-preproc-block --indent-preproc-cond --indent-preproc-define --unpad-paren --pad-oper --pad-header --align-pointer=type --align-reference=type --break-closing-brackets --break-elseifs --add-brackets --convert-tabs --max-code-length=79 --mode=c"
-let g:formatprg_cpp = "astyle"
-let g:formatprg_args_cpp = "--style=java --indent=spaces=2 --attach-classes --attach-namespaces --attach-extern-c --indent-classes --indent-modifiers --indent-cases --indent-namespaces --indent-labels --indent-preproc-block --indent-preproc-cond --indent-preproc-define --unpad-paren --pad-oper --pad-header --align-pointer=type --align-reference=type --break-closing-brackets --break-elseifs --add-brackets --convert-tabs --max-code-length=79"
+" F7 autoformats
+map <F3> mzgg=G`z<CR>
 
-" F7 autoformat tool
-if exists(":Autoformat")
-  noremap <F7> :Autoformat<CR>
-endif
-
-" Autoformat
-nmap <leader>f mygggqG'y
-
-" Scalariform
-nnoremap <leader>st :%!scalariform -f -q +compactControlReadability +alignParameters +alignSingleLineCaseStatements +preserveDanglingCloseParenthesis +preserveSpaceBeforeArguments --stdin --stdout <CR>
-
-" Control-P and TagBar
+" Control-P
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nnoremap <leader>. :CtrlPTag<cr>
