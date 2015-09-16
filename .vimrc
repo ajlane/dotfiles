@@ -57,6 +57,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'derekwyatt/vim-scala'
 
 " Python yo
+Plugin 'nvie/vim-flake8'
 Plugin 'hynek/vim-python-pep8-indent'
 
 " Ansible YAML
@@ -91,7 +92,7 @@ set mouse=a
 let g:airline#extensions#tabline#enabled = 1
 
 " Set nice font for GVim
-set guifont=Source\ Code\ Pro:h12
+set guifont=Monospace\ Regular\ 12
 
 " Syntax Highlighting
 syntax on
@@ -179,12 +180,18 @@ nmap <F2> :w<CR>
 " F1 saves too because I always mash it when I go to hit <F2>
 nmap <F1> :w<CR>
 
-" F7 autoformats
+" F3 autoformats
 map <F3> mzgg=G`z<CR>
+map <leader>l mzgg=G`z<CR>
+
+" In python files <leader-f> checks the buffer with flake8
+autocmd FileType python map <buffer> <leader>f :call Flake8()<CR>
 
 " Control-P
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" Tagbar
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>t :Tagbar<CR>
 
