@@ -34,6 +34,9 @@ Plugin 'tpope/vim-surround'
 " Ariline
 Plugin 'bling/vim-airline'
 
+" Vim + Clang
+Plugin 'justmao945/vim-clang'
+Plugin 'vhdirk/vim-cmake'
 
 " Ctrl-P
 Plugin 'kien/ctrlp.vim'
@@ -59,7 +62,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'vim-ruby/vim-ruby'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call vundle#end()
 
 "
 " My custom vim settings
@@ -84,14 +87,11 @@ set mouse=a
 let g:airline#extensions#tabline#enabled = 1
 
 " Set nice font for GVim
-set guifont=Monospace\ Regular\ 12
+set guifont=Source_Code_Pro:h10
 
 " Syntax Highlighting
 syntax on
-set t_Co=16
-let g:solarized_termcolors=16
-set background=dark
-colorscheme solarized
+colorscheme Monokai
 
 " Remap <leader>
 let mapleader=","
@@ -182,5 +182,11 @@ let g:ctrlp_cmd = 'CtrlP'
 map <leader>r :!rake<CR>
 
 " Spelling
-nnoremap <leader>\ :set spell spelllang=en_gb<CR>
-nnoremap <leader>/ :set nospell<CR>
+nnoremap <leader>\ :set spell spelllang=en_gb<CR><CR>
+nnoremap <leader>/ :set nospell<CR><CR>
+
+" CMake
+let g:cmake_cxx_compiler = 'clang'
+let g:cmake_c_compiler = 'clang'
+map <leader>b :CMake<CR>
+map <leader>c :CmakeClean<CR>
