@@ -25,9 +25,6 @@ Plugin 'flazz/vim-colorschemes'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
-" Super easy commenting, toggle comments etc
-Plugin 'scrooloose/nerdcommenter'
-
 " Autoclose (, " etc
 Plugin 'Townk/vim-autoclose'
 
@@ -37,14 +34,9 @@ Plugin 'tpope/vim-surround'
 " Ariline
 Plugin 'bling/vim-airline'
 
-" Vim Autoformat with Astyle
-Plugin 'Chiel92/vim-autoformat'
 
 " Ctrl-P
 Plugin 'kien/ctrlp.vim'
-
-" Tagbar (for C/C++ ctags projects)
-Plugin 'majutsushi/tagbar'
 
 " Markdown syntax
 Plugin 'godlygeek/tabular'
@@ -62,6 +54,9 @@ Plugin 'hynek/vim-python-pep8-indent'
 
 " Ansible YAML
 Plugin 'chase/vim-ansible-yaml'
+
+" Ruby man
+Plugin 'vim-ruby/vim-ruby'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -161,12 +156,8 @@ set guioptions-=r
 " Remove gui left scroll bar
 set guioptions-=L
 
-" If no files are specified open NerdTree
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " Open NerdTree
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " Cycle through buffers
 nnoremap <Tab> :bnext<CR>
@@ -188,9 +179,8 @@ autocmd FileType python map <buffer> <leader>f :call Flake8()<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" Tagbar
-nnoremap <leader>. :CtrlPTag<cr>
-nnoremap <leader>t :Tagbar<CR>
+" Build ruby
+map <leader>r :!rake<CR>
 
 " Spelling
 nnoremap <leader>\ :set spell spelllang=en_gb
