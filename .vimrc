@@ -168,8 +168,7 @@ nmap <F2> :w<CR>
 " F1 saves too because I always mash it when I go to hit <F2>
 nmap <F1> :w<CR>
 
-" F3 autoformats
-map <F3> mzgg=G`z<CR>
+" Leader l for format
 map <leader>l mzgg=G`z<CR>
 
 " In python files <leader-f> checks the buffer with flake8
@@ -183,5 +182,5 @@ let g:ctrlp_cmd = 'CtrlP'
 map <leader>r :!rake<CR>
 
 " Spelling
-nnoremap <leader>\ :set spell spelllang=en_gb
-nnoremap <leader>/ :set nospell
+nnoremap <leader>\ :set spell spelllang=en_gb<CR>
+nnoremap <leader>/ :set nospell<CR>
