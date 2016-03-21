@@ -91,7 +91,8 @@ set guifont=Source_Code_Pro:h10
 
 " Syntax Highlighting
 syntax on
-colorscheme Monokai
+set background=dark
+colorscheme solarized
 
 " Remap <leader>
 let mapleader=","
