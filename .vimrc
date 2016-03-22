@@ -1,5 +1,4 @@
 set nocompatible
-
 filetype off
 
 "
@@ -34,12 +33,8 @@ Plugin 'tpope/vim-surround'
 " Ariline
 Plugin 'bling/vim-airline'
 
-" Vim + Clang
-Plugin 'justmao945/vim-clang'
+" Cmake
 Plugin 'vhdirk/vim-cmake'
-
-" Ctrl-P
-Plugin 'kien/ctrlp.vim'
 
 " Markdown syntax
 Plugin 'godlygeek/tabular'
@@ -60,6 +55,9 @@ Plugin 'chase/vim-ansible-yaml'
 
 " Ruby man
 Plugin 'vim-ruby/vim-ruby'
+
+" Syntax checker
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -91,7 +89,8 @@ set guifont=Source_Code_Pro:h10
 
 " Syntax Highlighting
 syntax on
-colorscheme Monokai
+set background=dark
+colorscheme solarized
 
 " Remap <leader>
 let mapleader=","
@@ -120,8 +119,6 @@ set expandtab
 set textwidth=79
 set colorcolumn=79
 set wrap
-set cindent
-set cinoptions=h1,l1,g1,t0,i2,+2,(0,w1,W2
 
 " Make backspace work like it should
 set backspace=indent,eol,start
@@ -168,15 +165,8 @@ nmap <F2> :w<CR>
 " F1 saves too because I always mash it when I go to hit <F2>
 nmap <F1> :w<CR>
 
-" Leader l for format
-map <leader>l mzgg=G`z<CR>
-
 " In python files <leader-f> checks the buffer with flake8
 autocmd FileType python map <buffer> <leader>f :call Flake8()<CR>
-
-" Control-P
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
 " Build ruby
 map <leader>r :!rake<CR>
@@ -185,8 +175,18 @@ map <leader>r :!rake<CR>
 nnoremap <leader>\ :set spell spelllang=en_gb<CR><CR>
 nnoremap <leader>/ :set nospell<CR><CR>
 
-" CMake
-let g:cmake_cxx_compiler = 'clang'
-let g:cmake_c_compiler = 'clang'
 map <leader>b :CMake<CR>
 map <leader>c :CmakeClean<CR>
+
+" Leader l for format
+map <leader>l mzgg=G`z<CR>
+map <leader>a :%!astyle<CR>
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
